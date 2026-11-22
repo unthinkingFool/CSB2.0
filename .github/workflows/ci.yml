@@ -17,7 +17,7 @@ jobs:
     name: Lint, types, build, audit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version-file: package.json
@@ -33,7 +33,7 @@ jobs:
     name: Secret scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: gitleaks/gitleaks-action@v2
@@ -56,7 +56,7 @@ jobs:
     env:
       TEST_DATABASE_URL: postgresql://csb:csb@localhost:5432/csb_test
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version-file: package.json
@@ -82,7 +82,7 @@ jobs:
       PORT: "3001"
       E2E_BASE_URL: http://localhost:3001
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version-file: package.json
