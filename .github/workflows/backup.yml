@@ -75,7 +75,7 @@ jobs:
       PASS: ${{ secrets.BACKUP_PASSPHRASE }}
       PGPASSWORD: restore
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: ${{ needs.backup.outputs.name }}
       - name: Install the PostgreSQL 18 client
