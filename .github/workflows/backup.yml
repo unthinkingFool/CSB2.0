@@ -50,7 +50,7 @@ jobs:
           rm csb2.dump
           echo "name=$name" >> "$GITHUB_OUTPUT"
       - if: steps.check.outputs.ran == 'true'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.dump.outputs.name }}
           path: ${{ steps.dump.outputs.name }}
